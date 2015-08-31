@@ -1,0 +1,58 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "6b8c478f144a698b1a885c29340730e7",
+    "packages": [
+        {
+            "name": "LWS/CMS",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lemckewebsolutions/CMS.git",
+                "reference": "8a33dbb2d95934fca5a4590a45ad15e553d5ddf1"
+            },
+            "require": {
+                "lws/framework": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LWS\\CMS\\": "src/"
+                }
+            },
+            "description": "Source code of the LWS CMS",
+            "time": "2015-08-31 20:37:25"
+        },
+        {
+            "name": "LWS/Framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lemckewebsolutions/Framework.git",
+                "reference": "3d499eea1addebdd6757441064fbf5495ddcab3a"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LWS\\Framework\\": "src/"
+                }
+            },
+            "description": "Source code of the LWS framework",
+            "time": "2015-08-31 19:26:13"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "lws/framework": 20,
+        "lws/cms": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

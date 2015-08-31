@@ -1,0 +1,23 @@
+{
+  "name": "LWS/JufThirza",
+  "description": "Source code of jufthirza.nl",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/lemckewebsolutions/Framework.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/lemckewebsolutions/CMS.git"
+    }
+  ],
+  "require": {
+    "LWS/Framework": "dev-master",
+    "LWS/CMS": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "LWS\\JufThirza\\": "src/"
+    }
+  }
+}

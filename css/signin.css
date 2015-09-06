@@ -37,9 +37,3 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
-@media (min-width: 980px) {
-  .container {
-    padding-top: 35px;
-  }
-}

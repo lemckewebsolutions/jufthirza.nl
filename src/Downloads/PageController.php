@@ -1,8 +1,8 @@
 <?php
 namespace LWS\JufThirza\Downloads;
 
-use LWS\Framework\Context;
-use LWS\Framework\IGet;
+use LWS\Framework\Http\Context;
+use LWS\Framework\Http\IGet;
 
 class PageController implements IGet
 {

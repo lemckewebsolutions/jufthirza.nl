@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lemckewebsolutions/CMS.git",
-                "reference": "3e683da1fe49502252224714e7458c64c1234eca"
+                "reference": "ffb027b3c2912bdaa22ce78e19e53ab71f987f20"
             },
             "require": {
                 "lws/framework": "dev-master"
@@ -24,7 +24,7 @@
                 }
             },
             "description": "Source code of the LWS CMS",
-            "time": "2015-09-01 17:06:39"
+            "time": "2015-09-06 14:14:20"
         },
         {
             "name": "LWS/Framework",
@@ -32,7 +32,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lemckewebsolutions/Framework.git",
-                "reference": "ee33594e0ecb0860f31a4d7aee73fe35333227a9"
+                "reference": "c01f76187957b0cd63334f0798105bf81919276e"
             },
             "type": "library",
             "autoload": {
@@ -41,7 +41,7 @@
                 }
             },
             "description": "Source code of the LWS framework",
-            "time": "2015-09-01 16:48:18"
+            "time": "2015-09-06 13:55:36"
         }
     ],
     "packages-dev": [],

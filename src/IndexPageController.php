@@ -1,8 +1,8 @@
 <?php
 namespace LWS\JufThirza;
 
-use LWS\Framework\Context;
-use LWS\Framework\IGet;
+use LWS\Framework\Http\Context;
+use LWS\Framework\Http\IGet;
 
 class IndexPageController implements IGet
 {

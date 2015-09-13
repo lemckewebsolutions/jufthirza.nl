@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lemckewebsolutions/CMS.git",
-                "reference": "465105387e699b5068c2e7cb0f9ab5cc5b9ab702"
+                "reference": "d61470772b4bf645822107d106a92c49fb4de3da"
             },
             "require": {
                 "lws/framework": "dev-master"
@@ -24,7 +24,7 @@
                 }
             },
             "description": "Source code of the LWS CMS",
-            "time": "2015-09-06 20:05:08"
+            "time": "2015-09-13 13:25:55"
         },
         {
             "name": "LWS/Framework",
@@ -32,7 +32,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lemckewebsolutions/Framework.git",
-                "reference": "01b2122537670f8325fa8f9bb9cd8a9709079fd3"
+                "reference": "b405dcc457634e6689aff7ba4f1806dac30adebf"
             },
             "type": "library",
             "autoload": {
@@ -41,7 +41,7 @@
                 }
             },
             "description": "Source code of the LWS framework",
-            "time": "2015-09-06 19:41:10"
+            "time": "2015-09-13 13:19:11"
         },
         {
             "name": "dropbox/dropbox-sdk",

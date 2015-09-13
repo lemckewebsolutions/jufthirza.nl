@@ -8,7 +8,10 @@ class HomePageView extends PageView
 {
     public function parse()
     {
-        $this->viewModel->getHomePageContent();
+        /* @var HomePageViewModel $viewModel */
+        $viewModel = $this->viewModel;
+        $this->assignVariable("title", $viewModel->getHomePageTitle());
+        $this->assignVariable("text", $viewModel->getHomePageText());
 
         return parent::parse();
     }

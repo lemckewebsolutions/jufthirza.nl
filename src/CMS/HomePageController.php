@@ -2,12 +2,13 @@
 
 namespace LWS\JufThirza\CMS;
 
-Use LWS\CMS\PageView;
-Use LWS\CMS\PageViewModel;
 use LWS\Framework\Http\Context;
 use LWS\Framework\Http\IGet;
+use LWS\Framework\Http\IPost;
+use LWS\Framework\Notification;
+use LWS\JufThirza\CMS\Commands\SaveHomePageContentCommand;
 
-class HomePageController implements IGet
+class HomePageController implements IGet, IPost
 {
     public function get()
     {
@@ -23,5 +24,24 @@ class HomePageController implements IGet
         $view->addCssFile("cms.css");
 
         Context::getResponse()->setBody($view->parse());
+    }
+
+    public function post()
+    {
+        $this->saveHomePageContent();
+        $this->get();
+    }
+
+    private function saveHomePageContent()
+    {
+        if (isset($_POST["title"]) === false ||
+            isset($_POST["text"]) === false) {
+            return;
+        }
+
+        $saveCommand = new SaveHomePageContentCommand(Context::getDatabaseConnection());
+        $saveCommand->execute($_POST["title"], $_POST["text"]);
+
+        Context::addNotification(new Notification("Homepage content opgeslagen", Notification::LEVEL_SUCCESS));
     }
 }

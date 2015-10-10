@@ -1,5 +1,5 @@
 <?php
-chdir(__FILE__);
+chdir(__DIR__);
 chdir("../");
 
 ini_set("display_errors", 1);

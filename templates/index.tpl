@@ -3,6 +3,8 @@
  * @var LWS\JufThirza\PageView $this
  * @var string $head
  * @var string $footer
+ * @var string $text
+ * @var string $title
  */
 echo $head;
 ?>
@@ -11,9 +13,9 @@ echo $head;
             <div class="row">
                 <div class="main-slider">
                     <div class="slide-text">
-                        <h1>Ik ben juf Thirza</h1>
+                        <h1><?php echo $title?></h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                            <?php echo $text?>
                         </p>
                     </div>
                     <img src="../images/home/slider/hill.png" class="slider-hill" alt="slider image">

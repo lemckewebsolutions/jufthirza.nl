@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e589fb81c1ca0fb926fed39ed09dba3d",
+    "hash": "d861dc32b421f641f314a0e11ea1db5e",
+    "content-hash": "4694b9870e26680893ec204dfb54340e",
     "packages": [
         {
             "name": "LWS/CMS",

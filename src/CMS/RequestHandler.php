@@ -15,8 +15,10 @@ class RequestHandler extends \LWS\CMS\RequestHandler
         $requestUri = strtok($_SERVER["REQUEST_URI"],'?');
 
         switch ($requestUri) {
-            case "/cms/homepage":
+            case Url::HOME_PAGE_MANAGE_PAGE:
                 return "LWS\\JufThirza\\CMS\\HomePageController";
+            case Url::DOWNLOAD_CATEGORIES_PAGE:
+                return "LWS\\JufThirza\\CMS\\DownloadCategoriesPageController";
             default:
                 return "LWS\\JufThirza\\CMS\\IndexPageController";
         }

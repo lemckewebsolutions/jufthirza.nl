@@ -5,7 +5,7 @@ namespace LWS\JufThirza\CMS;
 use LWS\Framework\Http\Context;
 use LWS\Framework\Http\IGet;
 use LWS\Framework\Http\IPost;
-use LWS\Framework\Notification;
+use LWS\Framework\Notifications\Notification;
 use LWS\JufThirza\CMS\Commands\SaveHomePageContentCommand;
 
 class HomePageController implements IGet, IPost

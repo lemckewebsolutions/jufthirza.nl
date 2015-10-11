@@ -14,6 +14,8 @@ class SideBarViewModel extends ViewModel
         $categories["Algemeen"][] = new Item("Start", BaseUrls::INDEX);
         $categories["Algemeen"][] = new Item("Homepage", Url::HOME_PAGE_MANAGE_PAGE);
 
+        $categories["Downloads"][] = new Item("Download categorieen", Url::DOWNLOAD_CATEGORIES_PAGE);
+
         $this->categories = $categories;
     }
 

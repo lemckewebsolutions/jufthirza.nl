@@ -12,8 +12,10 @@ class RequestHandler extends \LWS\Framework\RequestHandler
         $requestUri = strtok($_SERVER["REQUEST_URI"],'?');
 
         switch ($requestUri) {
-            case "/downloads":
+            case UrlPatterns::DOWNLOADS:
                 return "LWS\\JufThirza\\Downloads\\PageController";
+            case UrlPatterns::MAIL:
+                return "LWS\\JufThirza\\MailPageController";
             default:
                 return "LWS\\JufThirza\\IndexPageController";
         }

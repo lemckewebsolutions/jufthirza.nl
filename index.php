@@ -1,6 +1,8 @@
 <?php
 chdir(__DIR__);
 
+setcookie("XDEBUG_SESSION", "PHPSTORM");
+
 ini_set("display_errors", 1);
 ini_set("html_erros", 1);
 

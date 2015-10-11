@@ -17,7 +17,10 @@
         <div class="col-md-4 col-sm-12">
             <div class="contact-form bottom">
                 <h2>Stuur een berichtje</h2>
-                <form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
+                <form id="main-contact-form"
+                      name="contact-form"
+                      method="post"
+                      action="<?php echo \LWS\JufThirza\UrlPatterns::MAIL?>">
                     <div class="form-group">
                         <input type="text" name="name" class="form-control" required="required" placeholder="Naam">
                     </div>

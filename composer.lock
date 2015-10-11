@@ -33,7 +33,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lemckewebsolutions/Framework.git",
-                "reference": "b405dcc457634e6689aff7ba4f1806dac30adebf"
+                "reference": "745f67c2032b0c669b64cb4d015247deb181f495"
             },
             "type": "library",
             "autoload": {
@@ -42,7 +42,7 @@
                 }
             },
             "description": "Source code of the LWS framework",
-            "time": "2015-09-13 13:19:11"
+            "time": "2015-10-11 13:35:07"
         },
         {
             "name": "dropbox/dropbox-sdk",

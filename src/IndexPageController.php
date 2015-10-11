@@ -3,6 +3,7 @@ namespace LWS\JufThirza;
 
 use LWS\Framework\Http\Context;
 use LWS\Framework\Http\IGet;
+use LWS\Framework\Http\Status;
 use LWS\JufThirza\Commands\RetrieveHomePageContentCommand;
 use LWS\JufThirza\Entities\HomePage;
 
@@ -13,6 +14,7 @@ class IndexPageController implements IGet
         $view = new HomePageView("templates/index.tpl", $this->getContent());
 
         Context::getResponse()->setBody($view->parse());
+        Context::getResponse()->setStatus(Status::OK);
     }
 
     /**

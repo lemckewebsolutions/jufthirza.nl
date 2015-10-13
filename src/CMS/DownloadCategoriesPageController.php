@@ -6,6 +6,7 @@ use LWS\Framework\Http\Context;
 use LWS\Framework\Http\IGet;
 use LWS\Framework\Http\IPost;
 use LWS\Framework\Http\Status;
+use LWS\Framework\Notifications\Notification;
 use LWS\JufThirza\CMS\Commands\DeleteDownloadCategoryCommand;
 use LWS\JufThirza\CMS\Commands\SaveDownloadCategoryCommand;
 
@@ -42,6 +43,11 @@ class DownloadCategoriesPageController implements IGet, IPost
             );
 
             $saveCategoryCommand->execute();
+
+            Context::addNotification(new Notification(
+                "Categorie succesvol toegevoegd.",
+                Notification::LEVEL_SUCCESS
+            ));
         }
 
         if ($_POST["action"] === "del" && isset($_POST["categoryid"]) === true) {
@@ -51,6 +57,11 @@ class DownloadCategoriesPageController implements IGet, IPost
             );
 
             $deleteCategoryCommand->execute();
+
+            Context::addNotification(new Notification(
+                "Categorie succesvol verwijderd.",
+                Notification::LEVEL_SUCCESS
+            ));
         }
 
         $this->get();

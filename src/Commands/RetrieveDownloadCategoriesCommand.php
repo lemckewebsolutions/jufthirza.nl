@@ -13,10 +13,12 @@ class RetrieveDownloadCategoriesCommand extends MySqlCommand
         $query = "
             select
               categoryid,
-              category
+              category,
+              sortorder
             from
               downloadscategories
             order BY
+              sortorder,
               category
         ";
 

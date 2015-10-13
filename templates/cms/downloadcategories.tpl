@@ -1,5 +1,6 @@
 <?php
 /**
+ * @var string $categories
  * @var string $head
  * @var string $footer
  * @var string $notifications
@@ -18,6 +19,17 @@ echo $head;
             </div>
             <div class="col-sm9 col-sm-offset-3 col-md-10 col-md-offset-2">
                 <?php echo $categories?>
+            </div>
+            <div class="col-sm9 col-sm-offset-3 col-md-10 col-md-offset-2">
+                <h2>Nieuwe categorie invoeren</h2>
+                <form class="form-inline" method="POST" action="<?php echo \LWS\JufThirza\CMS\Url::DOWNLOAD_CATEGORIES_PAGE?>">
+                    <input type="hidden" name="action" value="add">
+                    <div class="form-group">
+                        <label for="categoryInput">Categorie</label>
+                        <input type="text" class="form-control" id="categoryInput" name="category">
+                    </div>
+                    <button type="submit" class="btn btn-default">Toevoegen</button>
+                </form>
             </div>
     </div>
 </div>

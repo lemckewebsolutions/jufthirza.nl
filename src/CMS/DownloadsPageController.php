@@ -6,13 +6,15 @@ use LWS\Framework\Http\Context;
 use LWS\Framework\Http\IGet;
 use LWS\Framework\Http\IPost;
 use LWS\Framework\Http\Status;
+use LWS\Framework\Notifications\Notification;
 use LWS\JufThirza\CMS\Commands\SaveDownloadCommand;
+use LWS\JufThirza\Downloads\DownloadsPageViewModel;
 
 class DownloadsPageController implements IGet, IPost
 {
     public function get()
     {
-        $viewModel = new DownloadCategoriesPageViewModel(Context::getDatabaseConnection());
+        $viewModel = new DownloadsPageViewModel(Context::getDatabaseConnection());
         $viewModel->setUser($_SESSION["user"]);
 
         $view = new DownloadPageView(

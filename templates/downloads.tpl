@@ -28,9 +28,9 @@ echo $head;
         <div class="row">
             <ul class="portfolio-filter text-center">
                 <li><a class="btn btn-default active" href="#" data-filter="*">All</a></li>
-                <?php foreach ($categories as $category) { ?>
+                <?php foreach ($categories as $categoryId => $category) { ?>
                     <li>
-                        <a class="btn btn-default" href="#" data-filter=".<?php echo $category?>">
+                        <a class="btn btn-default" href="#" data-filter=".category_<?php echo $categoryId?>">
                             <?php echo $category?>
                         </a>
                     </li>
@@ -41,7 +41,7 @@ echo $head;
 </section>
 <div class="portfolio-items">
     <?php foreach ($downloads as $download) { ?>
-        <div class="col-xs-6 col-sm-4 col-md-3 portfolio-item <?php echo $download->getCategory()?> logos">
+        <div class="col-xs-6 col-sm-4 col-md-3 portfolio-item category_<?php echo $download->getCategory()->getCategoryId()?> logos">
             <div class="portfolio-wrapper">
                 <div class="portfolio-single">
                     <div class="portfolio-thumb">

@@ -1,6 +1,7 @@
 <?php
 /**
  * @var string $appKey
+ * @var string[] $downloadCategories
  */
 ?>
 <script type="text/javascript"
@@ -17,15 +18,28 @@
                 <h4 class="modal-title">Nieuwe download</h4>
             </div>
             <div class="modal-body">
-                <form method="POST" action="<?php echo \LWS\JufThirza\CMS\Url::DOWNLOADS_PAGE?>">
-                    <div class="form-group" id="downloadForm">
-                        <label for="exampleInputEmail1">Titel</label>
-                        <input type="text" class="form-control" id="titleInput" name="title">
+                <form action="<?php echo \LWS\JufThirza\CMS\Url::DOWNLOADS_PAGE?>"
+                      method="POST"
+                >
+                    <div class="form-group">
+                        <label for="titleInput">Titel</label>
+                        <input type="text" class="form-control" id="titleInput" placeholder="Titel" name="title" required>
                     </div>
                     <div class="form-group" id="downloadForm">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                        <label for="fileInputName">Bestand</label>
+                        <input type="hidden" class="form-control" id="fileThumpnail" name="fileThumbnail">
+                        <input type="hidden" class="form-control" id="fileInput" name="file">
+                        <input type="text" class="form-control" id="fileInputName" name="fileName" readonly>
                     </div>
+                    <div class="form-group">
+                        <label for="categoryInput">Category</label>
+                        <select class="form-control" id="categoryInput" name="categoryid">
+                            <?php foreach ($downloadCategories as $categoryId => $category) { ?>
+                                <option value="<?php echo $categoryId?>"><?php echo $category?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Verstuur</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -40,19 +54,15 @@
 
         // Required. Called when a user selects an item in the Chooser.
         success: function(files) {
-            alert("Here's the file link: " + files[0].link)
-        },
-
-        // Optional. Called when the user closes the dialog without selecting a file
-        // and does not include any parameters.
-        cancel: function() {
-
+            document.getElementById("fileInput").value = files[0].link;
+            document.getElementById("fileInputName").value = files[0].name;
+            document.getElementById("fileThumpnail").value = files[0].thumbnailLink;
         },
 
         // Optional. "preview" (default) is a preview link to the document for sharing,
         // "direct" is an expiring link to download the contents of the file. For more
         // information about link types, see Link types below.
-        linkType: "preview", // or "direct"
+        linkType: "direct", // or "direct"
 
         // Optional. A value of false (default) limits selection to a single file, while
         // true enables multiple file selection.

@@ -1,5 +1,6 @@
 <?php
 /**
+ * @var \LWS\JufThirza\Downloads\Download[] $downloads
  * @var string $head
  * @var string $footer
  * @var string $newDownloadModal
@@ -21,13 +22,21 @@ echo $head;
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th></th>
                         <th>Titel</th>
                         <th>Category</th>
                         <th>Acties</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                    <?php foreach ($downloads as $download) { ?>
+                        <tr>
+                            <td><img src="../../<?php echo $download->getThumbNailLocation()?>"></td>
+                            <td><?php echo $download->getTitle()?></td>
+                            <td><?php echo $download->getCategory()?></td>
+                            <td></td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#newdownloadmodal">

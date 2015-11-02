@@ -13,6 +13,7 @@ class DownloadPageView extends PageView
 {
     public function parse()
     {
+        $this->assignVariable("downloads", $this->viewModel->getDownloads());
         $this->assignVariable("newDownloadModal", $this->parseNewDownloadModal());
 
         return parent::parse();
@@ -25,7 +26,8 @@ class DownloadPageView extends PageView
         return $this->includeTemplate(
             "templates/cms/downloads/newdownloadmodal.inc.tpl",
             [
-                "appKey" => $config["CMS"]["DropboxAppKey"]
+                "appKey" => $config["CMS"]["DropboxAppKey"],
+                "downloadCategories" => $this->viewModel->getDownloadCategories()
             ]
         );
     }

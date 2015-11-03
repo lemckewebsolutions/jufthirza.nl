@@ -9,4 +9,6 @@ abstract class Url
     const DOWNLOADS_PAGE = "/cms/downloads";
 
     const DOWNLOAD_CATEGORIES_PAGE = "/cms/download-categorieen";
+
+    const USERS = "/cms/gebruikers";
 }

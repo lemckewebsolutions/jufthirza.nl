@@ -12,7 +12,6 @@
     }
   ],
   "require": {
-    "dropbox/dropbox-sdk": "1.1.*",
     "LWS/Framework": "dev-master",
     "LWS/CMS": "dev-master"
   },

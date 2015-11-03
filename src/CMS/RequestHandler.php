@@ -21,6 +21,8 @@ class RequestHandler extends \LWS\CMS\RequestHandler
                 return "LWS\\JufThirza\\CMS\\DownloadsPageController";
             case Url::DOWNLOAD_CATEGORIES_PAGE:
                 return "LWS\\JufThirza\\CMS\\DownloadCategoriesPageController";
+            case Url::USERS:
+                return "LWS\\JufThirza\\CMS\\UsersPageController";
             default:
                 return "LWS\\JufThirza\\CMS\\IndexPageController";
         }

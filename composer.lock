@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d861dc32b421f641f314a0e11ea1db5e",
-    "content-hash": "4694b9870e26680893ec204dfb54340e",
+    "hash": "8b8407d07ed088e53f4a655751379582",
+    "content-hash": "6391214233cbb83c9d86231e47c47d26",
     "packages": [
         {
             "name": "LWS/CMS",
@@ -13,7 +13,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lemckewebsolutions/CMS.git",
-                "reference": "73baa0cc70897290b635ee49b9e291d599e578e4"
+                "reference": "e6d789b028be2fdea45ddd720a8fda3b849d3835"
             },
             "require": {
                 "lws/framework": "dev-master"
@@ -25,7 +25,7 @@
                 }
             },
             "description": "Source code of the LWS CMS",
-            "time": "2015-10-12 17:24:12"
+            "time": "2015-11-03 19:48:01"
         },
         {
             "name": "LWS/Framework",
@@ -43,45 +43,6 @@
             },
             "description": "Source code of the LWS framework",
             "time": "2015-10-12 16:53:27"
-        },
-        {
-            "name": "dropbox/dropbox-sdk",
-            "version": "v1.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dropbox/dropbox-sdk-php.git",
-                "reference": "6901f8122458e0ce7e391468c0cf6cca465bd0ee"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dropbox/dropbox-sdk-php/zipball/6901f8122458e0ce7e391468c0cf6cca465bd0ee",
-                "reference": "6901f8122458e0ce7e391468c0cf6cca465bd0ee",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "php": ">= 5.3"
-            },
-            "require-dev": {
-                "apigen/apigen": "2.8.2",
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "2.0.0RC3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Dropbox": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Dropbox SDK for PHP",
-            "keywords": [
-                "dropbox"
-            ],
-            "time": "2015-06-29 21:47:57"
         }
     ],
     "packages-dev": [],

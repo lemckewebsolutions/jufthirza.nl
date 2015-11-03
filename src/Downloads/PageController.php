@@ -8,7 +8,10 @@ class PageController implements IGet
 {
     public function get()
     {
-        $view = new PageView(PageView::TEMPLATE_ROOT . "downloads.tpl");
+        $viewModel = new DownloadsPageViewModel(
+            Context::getDatabaseConnection()
+        );
+        $view = new PageView(PageView::TEMPLATE_ROOT . "downloads.tpl", $viewModel);
 
         Context::getResponse()->setBody($view->parse());
     }

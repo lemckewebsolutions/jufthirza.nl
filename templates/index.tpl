@@ -18,7 +18,6 @@ echo $head;
                             <?php echo $text?>
                         </p>
                     </div>
-                    <img src="../images/home/slider/hill.png" class="slider-hill" alt="slider image">
                     <img src="../images/home/slider/house.png" class="slider-house" alt="slider image">
                     <img src="../images/home/slider/sun.png" class="slider-sun" alt="slider image">
                     <img src="../images/home/slider/birds1.png" class="slider-birds1" alt="slider image">

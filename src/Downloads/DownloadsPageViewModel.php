@@ -1,12 +1,12 @@
 <?php
 
-namespace LWS\JufThirza\CMS;
+namespace LWS\JufThirza\Downloads;
 
 use LWS\CMS\PageViewModel;
 use LWS\JufThirza\Commands\RetrieveDownloadCategoriesCommand;
 use LWS\JufThirza\Commands\RetrieveDownloadsCommand;
 
-class DownloadCategoriesPageViewModel extends PageViewModel
+class DownloadsPageViewModel extends PageViewModel
 {
     public function getDownloadCategories()
     {

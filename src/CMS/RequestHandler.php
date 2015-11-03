@@ -17,6 +17,8 @@ class RequestHandler extends \LWS\CMS\RequestHandler
         switch ($requestUri) {
             case Url::HOME_PAGE_MANAGE_PAGE:
                 return "LWS\\JufThirza\\CMS\\HomePageController";
+            case Url::DOWNLOADS_PAGE:
+                return "LWS\\JufThirza\\CMS\\DownloadsPageController";
             case Url::DOWNLOAD_CATEGORIES_PAGE:
                 return "LWS\\JufThirza\\CMS\\DownloadCategoriesPageController";
             default:

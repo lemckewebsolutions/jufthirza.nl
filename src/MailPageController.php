@@ -44,7 +44,7 @@ class MailPageController extends Controller implements IPost
 
         return new Message(
             $_POST["email"],
-            "wouterlemcke@gmail.com", //"mail@jufthirza.nl",
+            "mail@jufthirza.nl",
             "JufThirza.nl: Er is een nieuw bericht verstuurd door: " . $_POST["name"],
             $_POST["message"]
         );

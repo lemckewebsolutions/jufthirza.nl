@@ -3,6 +3,7 @@
 namespace LWS\JufThirza\Commands;
 
 use LWS\Framework\Database\MySqlCommand;
+use LWS\JufThirza\Downloads\Category;
 
 class RetrieveDownloadCategoriesCommand extends MySqlCommand
 {
@@ -12,21 +13,31 @@ class RetrieveDownloadCategoriesCommand extends MySqlCommand
 
         $query = "
             select
-              categoryid,
-              category,
-              sortorder
+              dc.categoryid,
+              dc.category,
+              dc.sortorder,
+              count(d.downloadid) as downloadcount
             from
-              downloadscategories
+              downloadscategories dc
+              left join downloads d on d.categoryid = dc.categoryid
+            group by
+              dc.categoryid,
+              dc.category
             order BY
-              sortorder,
-              category
+              dc.sortorder,
+              dc.category
         ";
 
         $result = $db->query($query);
         $categories = [];
 
         while ($row = $result->fetch_object()) {
-            $categories[$row->categoryid] = $row->category;
+            $category = new Category();
+            $category->setCategoryId($row->categoryid);
+            $category->setCategory($row->category);
+            $category->setDownloadCount($row->downloadcount);
+
+            $categories[$row->categoryid] = $category;
         }
 
         return $categories;

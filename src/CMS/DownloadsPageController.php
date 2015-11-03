@@ -7,6 +7,8 @@ use LWS\Framework\Http\IGet;
 use LWS\Framework\Http\IPost;
 use LWS\Framework\Http\Status;
 use LWS\Framework\Notifications\Notification;
+use LWS\JufThirza\CMS\Commands\DeleteDownloadCommand;
+use LWS\JufThirza\CMS\Commands\RetrieveDownloadCommand;
 use LWS\JufThirza\CMS\Commands\SaveDownloadCommand;
 use LWS\JufThirza\Downloads\DownloadsPageViewModel;
 
@@ -14,6 +16,13 @@ class DownloadsPageController implements IGet, IPost
 {
     public function get()
     {
+        if (isset($_GET["action"]) === true && $_GET["action"] === "del") {
+            $this->deleteDownload();
+            Context::getResponse()->setLocation(Url::DOWNLOADS_PAGE);
+            Context::getResponse()->setStatus(Status::SEE_OTHER);
+            return;
+        }
+
         $viewModel = new DownloadsPageViewModel(Context::getDatabaseConnection());
         $viewModel->setUser($_SESSION["user"]);
 
@@ -27,6 +36,37 @@ class DownloadsPageController implements IGet, IPost
 
         Context::getResponse()->setBody($view->parse());
         Context::getResponse()->setStatus(Status::OK);
+    }
+
+    private function deleteDownload()
+    {
+        $downloadId = (int)$_GET["downloadid"];
+
+        $retrieveDownloadCommand = new RetrieveDownloadCommand(
+            Context::getDatabaseConnection(),
+            $downloadId
+        );
+
+        $download = $retrieveDownloadCommand->execute();
+
+        if ($download === null) {
+            return;
+        }
+
+        $deleteDownloadCommand = new DeleteDownloadCommand(
+            Context::getDatabaseConnection(),
+            $downloadId
+        );
+
+        $deleteDownloadCommand->execute();
+
+        unlink($download->getThumbNailLocation());
+        unlink($download->getDownloadLocation());
+
+        Context::addNotification(new Notification(
+            "Download succesvol verwijderd.",
+            Notification::LEVEL_SUCCESS
+        ));
     }
 
     public function post()
@@ -62,7 +102,7 @@ class DownloadsPageController implements IGet, IPost
         }
 
         file_put_contents($fileLocation, fopen($_POST["file"], 'r'));
-        file_put_contents($thumbNailLocation, fopen($_POST["fileThumbnail"], 'r'));
+        $this->saveThumbnail($thumbNailLocation);
 
         Context::addNotification(new Notification(
             "Download succesvol opgeslagen.",
@@ -71,5 +111,14 @@ class DownloadsPageController implements IGet, IPost
 
         Context::getResponse()->setLocation(Url::DOWNLOADS_PAGE);
         Context::getResponse()->setStatus(Status::SEE_OTHER);
+    }
+
+    private function saveThumbnail($fileName)
+    {
+        if (isset($_POST["thumbnailFile"]) === true && $_POST["thumbnailFile"] !== "") {
+            file_put_contents($fileName, fopen($_POST["thumbnailFile"], 'r'));
+        } else {
+            file_put_contents($fileName, fopen($_POST["fileThumbnail"], 'r'));
+        }
     }
 }

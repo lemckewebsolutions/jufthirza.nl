@@ -31,10 +31,18 @@ echo $head;
                 <tbody>
                     <?php foreach ($downloads as $download) { ?>
                         <tr>
-                            <td><img src="../../<?php echo $download->getThumbNailLocation()?>"></td>
+                            <td><img src="../../<?php echo $download->getThumbNailLocation()?>" width="100px"></td>
                             <td><?php echo $download->getTitle()?></td>
                             <td><?php echo $download->getCategory()?></td>
-                            <td></td>
+                            <td>
+                                <form action="<?php echo \LWS\JufThirza\CMS\Url::DOWNLOADS_PAGE?>" method="GET">
+                                    <input type="hidden" name="action" value="del">
+                                    <input type="hidden" name="downloadid" value="<?php echo $download->getDownloadId()?>">
+                                    <button class="btn btn-danger" type="submit">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true">
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
                     <?php } ?>
                 </tbody>

@@ -14,6 +14,8 @@ class Category
      */
     private $category;
 
+    private $downloadCount = 0;
+
     function __toString()
     {
         return $this->category;
@@ -49,5 +51,21 @@ class Category
     public function setCategory($value)
     {
         $this->category = (string)$value;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDownloadCount()
+    {
+        return $this->downloadCount;
+    }
+
+    /**
+     * @param int $value
+     */
+    public function setDownloadCount($value)
+    {
+        $this->downloadCount = (int)$value;
     }
 }

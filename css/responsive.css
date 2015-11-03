@@ -86,7 +86,7 @@
   }
 
   #home-slider .main-slider {
-    height: 250px;
+    height: 175px;
   }
 
   #home-slider .slide-text {
@@ -96,10 +96,6 @@
 
   #home-slider h1 {
     margin-top: 0;
-  }
-
-  #home-slider .slider-hill {
-    width: 400px;
   }
 
   #home-slider .slider-house {
@@ -121,7 +117,7 @@
   }
 
   #home-slider .slider-birds2 {
-    right: 0;
+    right: 35px;
     bottom: 90px;
     width: 80px;
   }

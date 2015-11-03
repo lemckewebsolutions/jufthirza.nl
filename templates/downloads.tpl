@@ -4,7 +4,7 @@
  * @var string $head
  * @var string $footer
  *
- * @var string[] $categories
+ * @var \LWS\JufThirza\Downloads\Category[] $categories
  * @var \LWS\JufThirza\Downloads\Download[] $downloads
  */
 echo $head;
@@ -31,7 +31,7 @@ echo $head;
                 <?php foreach ($categories as $categoryId => $category) { ?>
                     <li>
                         <a class="btn btn-default" href="#" data-filter=".category_<?php echo $categoryId?>">
-                            <?php echo $category?>
+                            <?php echo $category->getCategory()?>
                         </a>
                     </li>
                 <?php } ?>

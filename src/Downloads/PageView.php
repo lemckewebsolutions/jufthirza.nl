@@ -21,9 +21,18 @@ class PageView extends \LWS\JufThirza\PageView
 
     public function parse()
     {
-        $this->assignVariable("categories", $this->viewModel->getDownloadCategories());
+        $this->assignVariable("categories", $this->getCategoriesToShow());
         $this->assignVariable("downloads", $this->viewModel->getDownloads());
 
         return parent::parse();
+    }
+
+    private function getCategoriesToShow()
+    {
+        $categories = $this->viewModel->getDownloadCategories();
+
+        return array_filter($categories, function($var){
+           return $var->getDownloadCount() > 0;
+        });
     }
 }
